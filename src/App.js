@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 // import { Router, Route, browserHistory } from 'react-router'
 // import routes from './routes'
 // import store from './store'
@@ -12,11 +12,14 @@ console.log('App evaluated');
 // You can ignore this warning. For details, see:
 // https://github.com/reactjs/react-router/issues/2182
 
+import Editor from './draft/editor';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
-      <div>hello <span>;_)</span></div>
+      <div className="DraftEditor-editorContainer">
+        huuhh
+      </div>
     );
   }
 }
