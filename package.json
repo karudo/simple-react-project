@@ -1,0 +1,35 @@
+{
+  "name": "simple-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Deonis Peretyagin <karudo@gmail.com> (https://github.com/karudo)",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-merge-sibling-variables": "^6.8.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "css-loader": "^0.23.1",
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb-base": "^3.0.1",
+    "eslint-loader": "^1.3.0",
+    "eslint-plugin-import": "^1.9.2",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-hot-loader": "^3.0.0-beta.2",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.5.0",
+    "redux": "^3.5.2",
+    "redux-thunk": "^2.1.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^2.1.0-beta.13",
+    "webpack-dev-server": "^2.1.0-beta.0",
+    "webpack-hot-middleware": "^2.10.0"
+  }
+}
