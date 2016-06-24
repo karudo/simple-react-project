@@ -13,16 +13,21 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
     publicPath: '/static/',
-    pathinfo: true,
+    pathinfo: true
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],
   module: {
+    preLoaders: [{
+      test: /\.js$/,
+      loader: 'eslint',
+      exclude: /node_modules/
+    }],
     loaders: [{
       test: /\.js$/,
       loaders: ['babel'],
-      include: path.join(__dirname, 'src')
+      exclude: /node_modules/
     }, {
       test: /\.css$/,
       loaders: 'style-loader!css-loader?modules'

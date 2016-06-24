@@ -1,10 +1,10 @@
-import { AppContainer } from 'react-hot-loader';
+import {AppContainer} from 'react-hot-loader';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import deepForceUpdate from 'react-deep-force-update'
+import deepForceUpdate from 'react-deep-force-update';
 
-console.log('index evaluated')
+console.log('index evaluated');
 const rootEl = document.getElementById('root');
 let instance = ReactDOM.render(
   <AppContainer>
@@ -13,7 +13,7 @@ let instance = ReactDOM.render(
   rootEl
 );
 
-global.forceUpdate = () => deepForceUpdate(instance)
+global.forceUpdate = () => deepForceUpdate(instance);
 
 if (module.hot) {
   module.hot.accept('./App', () => {

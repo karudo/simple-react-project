@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-//import { Router, Route, browserHistory } from 'react-router'
-//import routes from './routes'
-//import store from './store'
-//import { Provider } from 'react-redux'
+import React, {Component} from 'react';
+// import { Router, Route, browserHistory } from 'react-router'
+// import routes from './routes'
+// import store from './store'
+// import { Provider } from 'react-redux'
 
-console.log('App evaluated')
+console.log('App evaluated');
 // If you use React Router, make this component
 // render <Router> with your routes. Currently,
 // only synchronous routes are hot reloaded, and
@@ -22,4 +22,4 @@ class App extends Component {
 }
 
 
-export default App
+export default App;
