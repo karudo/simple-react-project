@@ -1,12 +1,18 @@
 import React from 'react';
 import Draft from 'draft-js';
 import 'draft-js/dist/Draft.css';
-// import Immutable from 'immutable';
+import {stateToHTML} from 'draft-js-export-html';
+
+import BlockStyleControls from './blockStyles';
+import InlineStyleControls from './inlineStyles';
+
+import styles from './editor.css';
 
 const {
   Editor,
   EditorState,
-  RichUtils
+  RichUtils,
+  convertToRaw
 } = Draft;
 
 // const {Map} = Immutable;
@@ -22,7 +28,7 @@ const styleMap = {
 
 function getBlockStyle(block) {
   switch (block.getType()) {
-    case 'blockquote': return 'RichEditor-blockquote';
+    case 'blockquote': return styles.blockquote;
     default: return null;
   }
 }
@@ -71,21 +77,28 @@ export default class RichEditorExample extends React.Component {
     );
   }
 
+  _log() {
+    const {editorState} = this.state;
+    console.log(editorState.toJS());
+    console.log(convertToRaw(editorState.getCurrentContent()));
+    console.log(stateToHTML(editorState.getCurrentContent()));
+  }
+
   render() {
     const {editorState} = this.state;
 
     // If the user changes block type before entering any text, we can
     // either style the placeholder or hide it. Let's just hide it now.
-    let className = 'RichEditor-editor';
+    let className = styles.editor;
     const contentState = editorState.getCurrentContent();
     if (!contentState.hasText()) {
       if (contentState.getBlockMap().first().getType() !== 'unstyled') {
-        className += ' RichEditor-hidePlaceholder';
+        className += styles.hidePlaceholder;
       }
     }
 
     return (
-      <div className="RichEditor-root">
+      <div className={styles.root}>
         <BlockStyleControls
           editorState={editorState}
           onToggle={this.toggleBlockType}
@@ -105,6 +118,9 @@ export default class RichEditorExample extends React.Component {
             ref="editor"
             spellCheck
           />
+        </div>
+        <div>
+          <button onClick={() => this._log()}>Log!</button>
         </div>
       </div>
     );

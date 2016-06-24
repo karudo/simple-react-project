@@ -17,8 +17,8 @@ import Editor from './draft/editor';
 class App extends React.Component {
   render() {
     return (
-      <div className="DraftEditor-editorContainer">
-        huuhh
+      <div>
+        <Editor />
       </div>
     );
   }

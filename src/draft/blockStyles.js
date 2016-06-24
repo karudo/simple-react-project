@@ -1,5 +1,9 @@
 import React from 'react';
 
+import StyleButton from './styleButton';
+
+import styles from './editor.css';
+
 const BLOCK_TYPES = [
   {label: 'H1', style: 'header-one'},
   {label: 'H2', style: 'header-two'},
@@ -9,8 +13,7 @@ const BLOCK_TYPES = [
   {label: 'H6', style: 'header-six'},
   {label: 'Blockquote', style: 'blockquote'},
   {label: 'UL', style: 'unordered-list-item'},
-  {label: 'OL', style: 'ordered-list-item'},
-  {label: 'Code Block', style: 'code-block'},
+  {label: 'OL', style: 'ordered-list-item'}
 ];
 
 export default (props) => {
@@ -22,7 +25,7 @@ export default (props) => {
     .getType();
 
   return (
-    <div className="RichEditor-controls">
+    <div className={styles.controls}>
       {BLOCK_TYPES.map((type) =>
         <StyleButton
           key={type.label}

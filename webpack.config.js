@@ -30,7 +30,7 @@ module.exports = {
       exclude: /node_modules/
     }, {
       test: /\.css$/,
-      loaders: 'style-loader!css-loader?modules',
+      loaders: 'style-loader!css-loader?modules&localIdentName=[name]_[local]__[hash:base64:8]',
       exclude: /node_modules/
     }, {
       test: /\.css$/,
